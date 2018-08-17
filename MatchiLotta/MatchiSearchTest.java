@@ -10,7 +10,13 @@ public class MatchiSearchTest {
 	public void LogInTest() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
-		matchi.logIn("mjukvarutestare@mailinator.com");
+		matchi.logIn();
+		matchi.book();
+		matchi.searchInOutCourt();
+		matchi.chooseInOutCourt("Inomhus");
+		matchi.searchSport();
+		matchi.chooseSport("Badminton");
+		
 	}
 	
 
