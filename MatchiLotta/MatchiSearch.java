@@ -86,7 +86,7 @@ public class MatchiSearch {
 	}
 	
 //method OK	
-	public void chooseArena(String string) {
+	public void chooseVenue(String string) {
 		WebElement element = webDriver.findElement (By.linkText(string));
 		element.click();
 	
