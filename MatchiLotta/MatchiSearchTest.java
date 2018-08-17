@@ -32,7 +32,7 @@ public class MatchiSearchTest {
 		matchi.searchArea();
 		matchi.chooseArea("Göteborg");
 		delay(2000);
-		matchi.chooseArena("Hönö Tennissällskap");
+		matchi.chooseVenue("Hönö Tennissällskap");
 	}	
 */		
 	
