@@ -26,7 +26,7 @@ public class MatchiSearchTest {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
 		matchi.searchSport();
-		matchi.chooseSport("Tennis");
+		matchi.chooseSportWithOutLogin("Tennis");
 		matchi.searchDay();
 		matchi.chooseDay("24");
 		matchi.searchArea();
