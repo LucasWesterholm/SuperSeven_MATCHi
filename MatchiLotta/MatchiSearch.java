@@ -23,10 +23,23 @@ public class MatchiSearch {
 		webDriver.get(siteUrl);
 		}
 	
-	public void logIn(String string) {
-		WebElement element = webDriver.findElement(By.className("login"));
+//method OK		
+	public void logIn() {
+		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[2]/a"));
 		element.click();
-		element.sendKeys(string);
+		WebElement usernameElement = webDriver.findElement(By.cssSelector("#username"));
+		usernameElement.click();
+		usernameElement.sendKeys("mjukvarutestare@mailinator.com");
+		WebElement passwordElement = webDriver.findElement(By.cssSelector("#password"));
+		passwordElement.click();
+		passwordElement.sendKeys("mjukvarutestare");
+		passwordElement.sendKeys(Keys.ENTER);
+		}
+	
+//method OK
+	public void book() {
+		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[1]/li[1]/a"));
+		element.click();
 	}
 	
 
