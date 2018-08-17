@@ -44,11 +44,12 @@ public class MatchiSearch {
 	
 
 /*	
-//method OK
-	public void searchSport() {
-		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"hero\"]/div/div/div[1]/div/form/div/div[1]/div/button")); 
+//method OK when go from home page. NOT working from the menu Boka 
+	public void chooseSportWithOutLogin(String string) {
+		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"hero\"]/div/div/div[1]/div/form/div/div[1]/div/div/ul/li[2]/a")); 
 		element.click();
 		}
+	
 //method OK
 	public void chooseSport(String string) {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"hero\"]/div/div/div[1]/div/form/div/div[1]/div/div/ul/li[2]/a")); 
