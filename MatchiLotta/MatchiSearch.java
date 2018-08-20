@@ -40,10 +40,8 @@ public class MatchiSearch {
 	public void book() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[1]/li[1]/a"));
 		element.click();
-	}
+		}
 	
-
-/*	
 //method OK when go from home page. NOT working from the menu Boka 
 	public void chooseSportWithOutLogin(String string) {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"hero\"]/div/div/div[1]/div/form/div/div[1]/div/div/ul/li[2]/a")); 
@@ -76,7 +74,7 @@ public class MatchiSearch {
 	public void searchArea() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"q\"]"));
 		element.click();
-	}
+		}
 	
 //method OK	
 	public void chooseArea(String string) {
@@ -104,5 +102,5 @@ public class MatchiSearch {
 	}
 
 	
-*/
+
 }
