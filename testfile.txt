@@ -1,5 +1,1 @@
-Hi how are you?
-
-whats your plan for today?
-
-I am good.
+This is simply a test file to be uploaded to GitHub
