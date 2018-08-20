@@ -1,5 +1,3 @@
-package MatchiLotta;
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -13,7 +11,7 @@ public class MatchiSearch {
 	private WebDriver webDriver;
 
 		public MatchiSearch() {
-		System.setProperty("webdriver.chrome.driver", "/Users/lotber/automatisering/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/j-g_9/git/chromedriver");
 		webDriver = new ChromeDriver();
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}

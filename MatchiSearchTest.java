@@ -1,5 +1,3 @@
-package MatchiLotta;
-
 import org.junit.Test;
 
 
