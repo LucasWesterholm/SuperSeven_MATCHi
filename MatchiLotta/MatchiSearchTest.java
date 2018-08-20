@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MatchiSearchTest {
 	
 
-	@Test
+//	@Test
 	public void LogInTest() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
@@ -20,8 +20,8 @@ public class MatchiSearchTest {
 	}
 	
 
-/*	
-	@Test
+	
+//	@Test
 	public void MatchiTest() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
@@ -33,14 +33,19 @@ public class MatchiSearchTest {
 		matchi.chooseArea("Göteborg");
 		delay(2000);
 		matchi.chooseVenue("Hönö Tennissällskap");
-	}	
-*/		
+	}			
 	
 	private void delay(int milliseconds)
 	{
 		try {
 			Thread.sleep(milliseconds);
 		} catch (InterruptedException e) {
+		}
+	}
+	
+	@Test
+	public void testOrder() {
+		logInTest();
 		}
 	}
 
