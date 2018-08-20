@@ -4,7 +4,9 @@ import org.junit.Test;
 
 
 public class MatchiSearchTest {
-	
+	/**
+	 * Test order method created in the bottom
+	 */
 
 //	@Test
 	public void LogInTest() {
@@ -19,7 +21,6 @@ public class MatchiSearchTest {
 		
 	}
 	
-
 	
 //	@Test
 	public void MatchiTest() {
