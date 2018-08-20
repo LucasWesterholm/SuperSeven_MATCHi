@@ -17,7 +17,10 @@ public class MatchiSearch {
 		webDriver = new ChromeDriver();
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
-		
+
+		/** testing pull to Git
+		 * 
+		 */
 //method OK	
 	public void openSite(String siteUrl) {
 		webDriver.get(siteUrl);
