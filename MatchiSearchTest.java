@@ -1,5 +1,7 @@
 package MatchiLotta;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 
@@ -12,7 +14,16 @@ public class MatchiSearchTest {
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
 		matchi.logIn();
 		}
-		
+	
+//	@Test
+	public void LogInNegativeTest() {
+		MatchiSearch matchi = new MatchiSearch();
+		matchi.openSite("https://beta1.matchi.se/?lang=sv");
+		matchi.logInNegative();
+		assertTrue(matchi.logInNegativeCheck("Felaktigt användarnamn eller lösenord"));
+		matchi.quitSelenium();
+	}
+	
 // @Test	
 	public void LogOutTest() {
 		MatchiSearch matchi = new MatchiSearch();
@@ -37,9 +48,9 @@ public class MatchiSearchTest {
 		matchi.chooseVenue("Hönö Tennissällskap");
 		matchi.chooseDayTimeCourt();
 		delay(2000);
-		matchi.payBySwish("");
+		matchi.payBySwish();
 		delay(5000);
-		matchi.writeNumber("0123456789");
+		matchi.writeMobileNumber("0123456789");
 		delay(5000);
 	//	matchi.logOut();
 	//	matchi.quitSelenium();

@@ -23,7 +23,11 @@ public class MatchiSearch {
 		webDriver.get(siteUrl);
 		}
 	
-//method OK		
+
+	/**
+	 * Hard coded login credentials for webpage https://beta1.matchi.se
+	 * 
+	 */
 	public void logIn() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[2]/a"));
 		element.click();
@@ -36,19 +40,50 @@ public class MatchiSearch {
 		passwordElement.sendKeys(Keys.ENTER);
 		}
 	
-//method OK
-	public void logOut() {
-		WebElement element = webDriver.findElement(By.cssSelector("#navbar-collapse > ul.nav.navbar-nav.navbar-right > li:nth-child(4) > a"));
-		element.click();
-		WebElement elementNext = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[4]/ul/li[8]/a"));
-		elementNext.click();
-		}
+		/**
+		 * Hard coded login with WRONG credentials for webpage https://beta1.matchi.se
+		 * 
+		 */
+		public void logInNegative() {
+			WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[2]/a"));
+			element.click();
+			WebElement usernameElement = webDriver.findElement(By.cssSelector("#username"));
+			usernameElement.click();
+			usernameElement.sendKeys("mjukvarutestare3@mailinator.com");
+			WebElement passwordElement = webDriver.findElement(By.cssSelector("#password"));
+			passwordElement.click();
+			passwordElement.sendKeys("mjukvarutest");
+			passwordElement.sendKeys(Keys.ENTER);
+			}
+	
+
+		/**
+		 * Checking message when usage of WRONG credentials for webpage https://beta1.matchi.se
+		 * @param negativePassword
+		 * @return
+		 */
+		public boolean logInNegativeCheck(String negativePassword) {
+			WebElement element = webDriver.findElement(By.className("notification-message"));
+			String text = element.getText();
+			return text.contains(negativePassword);
+			}
+	
+		/**
+		 * Logout from webpage https://beta1.matchi.se
+		 * 
+		 */
+		public void logOut() {
+			WebElement element = webDriver.findElement(By.cssSelector("#navbar-collapse > ul.nav.navbar-nav.navbar-right > li:nth-child(4) > a"));
+			element.click();
+			WebElement elementNext = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[4]/ul/li[8]/a"));
+			elementNext.click();
+			}
 	
 //method OK
 		public void book() {
-		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[1]/li[1]/a"));
-		element.click();
-		}
+			WebElement element = webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[1]/li[1]/a"));
+			element.click();
+			}
 		
 //method OK		
 		public void searchSport() {
@@ -57,6 +92,7 @@ public class MatchiSearch {
 			}
 		
 //method OK	
+	
 		public void chooseSport(String string) {
 			WebElement element = webDriver.findElement(By.partialLinkText(string));
 			element.click();
@@ -67,22 +103,24 @@ public class MatchiSearch {
 			WebElement element = webDriver.findElement(By.xpath("//*[@id=\"schedule\"]/div/div/div[2]/table/tbody/tr[2]/td[2]/table/tbody/tr/td[16]"));
 			element.click();
 			}
-//method OK	
-		public void payBySwish1(String string) {
-			WebElement element = webDriver.findElement(By.cssSelector("#local-payment-methods > div > label"));
-			element.click();
-			WebElement elementNext = webDriver.findElement(By.className("btn-success"));
-			elementNext.click();
-			}
-//method OK			
-		public void payBySwish(String string) {
+
+
+			/**
+			 * Pay for court by Swish also need method writeMobileNumber() 
+			 * 
+			 */
+		public void payBySwish() {
 			WebElement element = webDriver.findElement(By.xpath("//label[@for='swish']"));
 			element.click();
 			WebElement elementNext = webDriver.findElement(By.className("btn-success"));
 			elementNext.click();
 			}
-//method OK		
-		public void writeNumber(String string) {	
+
+			/**
+			 * Saving mobileNumber
+			 * @param string 
+			 */
+		public void writeMobileNumber(String string) {	
 			WebElement elementNr = webDriver.findElement(By.id("swish.telephoneNumber"));
 			elementNr.click();
 			elementNr.sendKeys(string);
