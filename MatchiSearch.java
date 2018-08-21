@@ -39,7 +39,7 @@ public class MatchiSearch {
 	public boolean logInNegativeCheck(String negativePassword) {
 		WebElement element = webDriver.findElement(By.className("notification-message"));
 		String text = element.getText();
-		return text.contains(negativePassword);
+		return text.equals(negativePassword);
 	}
 	
 //method OK		
@@ -59,7 +59,7 @@ public class MatchiSearch {
 	public boolean logInPositiveCheck(String positivePassword) {
 		WebElement element = webDriver.findElement(By.className("media-heading"));
 		String text = element.getText();
-		return text.contains(positivePassword);
+		return text.equals(positivePassword);
 	}
 
 //method OK
