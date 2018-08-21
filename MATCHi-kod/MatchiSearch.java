@@ -3,6 +3,7 @@ package matchi;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +19,6 @@ public class MatchiSearch {
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 
-		/** testing pull to Git
-		 * 
-		 */
 	
 	public void openSite(String siteUrl) {
 		webDriver.get(siteUrl);
@@ -123,8 +121,17 @@ public class MatchiSearch {
 		element.click();
 	}
 	
-	public void selectVenue() {	
-		WebElement element = webDriver.findElement (By.xpath("//*[@id=\"facilities-result\"]/div/div[1]/div/div[1]/div[1]/div/div[2]/h3/a"));
+	public void chooseTimeInVenues() {
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("window.scrollBy(0,500)");
+		WebElement element = webDriver.findElement (By.xpath("//*[@id=\"schedule\"]/div/div/div[2]/table/tbody/tr[2]/td[2]/table/tbody/tr/td[12]"));
+		element.click();
+	}
+	
+	public void selectVenue(String string) {	
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		WebElement element = webDriver.findElement (By.partialLinkText(string));
 		element.click();
 	}
 	
@@ -141,7 +148,6 @@ public class MatchiSearch {
 	public void clickSearchButton() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"submit\"]"));
 		element.click();
-
 	}
 	
 	public void clickSmashButton() {
