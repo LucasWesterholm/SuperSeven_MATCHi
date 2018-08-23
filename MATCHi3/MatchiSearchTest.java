@@ -37,7 +37,7 @@ public class MatchiSearchTest {
 	/**
 	 * Here you can test to select month, day and time on your booking via the page "Boka"
 	 */
-//	@Test
+	@Test
 	public void SearchMonthDayTimeViaBook() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
@@ -63,7 +63,7 @@ public class MatchiSearchTest {
 	/**
 	 *  Here you can test to select month, day and time on your booking via the page "Min Profil" 
 	 */
-	//@Test
+//@Test
 	public void SearchMonthDayTimeViaMyPage() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
@@ -175,6 +175,94 @@ public class MatchiSearchTest {
 		matchi.quitSelenium();
 	}
 
+	/**
+	 * Books a time with correct card info, and verifies that the booking is successful.
+	 * This test need to be run before "BookingMultipleTimes" since the latter needs to use the card info saved from this test.
+	 */
+	
+	@Test
+	public void PayByCard() {
+		MatchiSearch matchi = new MatchiSearch();
+		matchi.openSite("https://beta1.matchi.se/?lang=sv");
+		matchi.logIn();
+		matchi.chooseDate("2018-08-29");
+		matchi.chooseVenue();
+		matchi.selectVenue("Hönö Tennissällskap");
+		matchi.chooseCourtTime("2", "6");
+		delay(2000);
+		matchi.payCourtByCard("2223000048410010", "MjukVarutestare", "737");
+		assertTrue(matchi.assertBooking("Tack för din bokning!"));
+		matchi.unBook();
+		matchi.quitSelenium();
+	}	
+	
+	/**
+	 * Tries to book a time using a faulty cvc, and verifies that You get an error message.
+	 */
+	
+	@Test
+	public void PayByCardWrongCvC() {
+		MatchiSearch matchi = new MatchiSearch();
+		matchi.openSite("https://beta1.matchi.se/?lang=sv");
+		matchi.logIn();
+		matchi.chooseDate("2018-08-29");
+		matchi.chooseVenue();
+		matchi.selectVenue("Hönö Tennissällskap");
+		matchi.chooseCourtTime("2", "6");
+		delay(2000);
+		matchi.payCourtByCard("2223000048410010", "MjukVarutestare", "666");
+		assertTrue(matchi.assertBooking("Ett problem upptäcktes"));
+		matchi.quitSelenium();
+	}	
+
+	/**
+	 * unfinished because IMO uneccessary?? change my mind and we will fix it.
+	 */
+	
+/*	
+	@Test
+	public void PayByCardWrongCardNumber() {
+		MatchiSearch matchi = new MatchiSearch();
+		matchi.openSite("https://beta1.matchi.se/?lang=sv");
+		matchi.logIn();
+		matchi.chooseDate("2018-08-29");
+		matchi.chooseVenue("Hönö Tennissällskap");
+		matchi.chooseCourtTime("2", "6");
+		delay(2000);
+		matchi.payCourtByCard("2223111148410010", "MjukVarutestare", "737");
+	}	
+		*/ 
+	
+	/**
+	 * testing to book multiple courts using the "boka flear" option and verifies that booking is successful
+	 * although it only checks that the booking is completed and not whether the times are.
+	 */
+	
+	@Test
+	public void BookingMultipleTimes() {
+		MatchiSearch matchi = new MatchiSearch();
+		matchi.openSite("https://beta1.matchi.se/?lang=sv");
+		matchi.logIn();
+		matchi.chooseDate("2018-08-29");
+		matchi.chooseVenue();
+		matchi.selectVenue("Hönö Tennissällskap");
+		matchi.pickMultCourtTime();
+		matchi.chooseCourtTime("2", "6");
+		matchi.chooseCourtTime("2", "9");
+		matchi.chooseCourtTime("3", "5");
+		matchi.chooseCourtTime("3", "10");
+		matchi.confirmMultCourtTime();
+		assertTrue(matchi.assertBooking("Tack för din bokning!"));
+		delay(2000);
+		matchi.unBook();
+		matchi.unBookAgain();
+		matchi.unBookAgain();
+		matchi.unBookAgain();
+		matchi.quitSelenium(); 
+	}		
+
+	
+	
 	/**
 	 * A complete testcase from beginning to end	
 	 */
