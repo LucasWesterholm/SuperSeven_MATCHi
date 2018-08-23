@@ -92,7 +92,8 @@ public class MatchiSearch {
 	public void chooseDayOnMyPage(String string) {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"date\"]"));
 		element.click();
-		element.sendKeys(Keys.CONTROL+"a");
+		element.sendKeys(Keys.TAB);
+		element.clear(); 
 		element.sendKeys(string);
 	}
 	

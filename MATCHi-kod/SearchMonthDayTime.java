@@ -31,7 +31,7 @@ public class SearchMonthDayTime {
 	/**
 	 * Here you can test to select month, day and time on your booking via the page "Min Profil" 
 	 */
-	@Test
+//	@Test
 	public void SearchMonthDayTimeViaMyPage() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
@@ -51,7 +51,7 @@ public class SearchMonthDayTime {
 	/**
 	 * Here you can test to select month, day and time on your booking via the page "Anläggningar"
 	 */
-	@Test
+//	@Test
 	public void SearchMonthDayTimeViaVenues() {
 		MatchiSearch matchi = new MatchiSearch();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
