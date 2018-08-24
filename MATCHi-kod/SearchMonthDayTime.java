@@ -1,4 +1,4 @@
-package matchi;
+package matchi.matchi;
 
 import org.junit.Test;
 
@@ -9,67 +9,67 @@ public class SearchMonthDayTime {
 	 */
 	@Test
 	public void SearchMonthDayTimeViaBook() {
-		MatchiSearch matchi = new MatchiSearch();
+		MatchiSearchMonthDayTime matchi = new MatchiSearchMonthDayTime();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
 		matchi.logIn();
 		matchi.pageBook();
 		matchi.searchInOutCourt();
 //Here you can enter Inomhus or Utomhus
-		matchi.chooseInOutCourt("Inomhus");
-		matchi.searchSport();
+		matchi.selectInOutCourt("Inomhus");
+		matchi.searchSportViaBook();
 //Here you can enter what sport is to be selected
-		matchi.chooseSport("Badminton");
+		matchi.selectSport("Badminton");
 //Here you can enter your desired date in the form "yyyy-mm-dd"
-		matchi.chooseDayOnBook("2018-08-25");
+		matchi.selectDayViaBook("2018-08-31");
 //Here you can enter the Venue/City		
-		matchi.searchArea("Hönö");
-		matchi.chooseVenue();
-		matchi.chooseTime();
+		matchi.searchCityVenue("Hönö");
+		matchi.selectVenueViaBook();
+		matchi.selectTime();
 		matchi.quitSelenium();
 	}
 
 	/**
 	 * Here you can test to select month, day and time on your booking via the page "Min Profil" 
 	 */
-//	@Test
+	@Test
 	public void SearchMonthDayTimeViaMyPage() {
-		MatchiSearch matchi = new MatchiSearch();
+		MatchiSearchMonthDayTime matchi = new MatchiSearchMonthDayTime();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
 		matchi.logIn();
-		matchi.searchSportMyProfile();
+		matchi.searchSportViaMyProfile();
 //Here you can enter what sport is to be selected
-		matchi.chooseSport("Badminton");
+		matchi.selectSport("Badminton");
 //Here you can enter your desired date in the form "yyyy-mm-dd"
-		matchi.chooseDayOnMyPage("2018-08-25");
+		matchi.selectDayViaMyPage("2018-08-31");
 //Here you can enter the Venue/City
-		matchi.searchArea("Hönö");
+		matchi.searchCityVenue("Hönö");
 		matchi.clickSmashButton();
-		matchi.chooseTime();
+		matchi.selectTime();
 		matchi.quitSelenium();
 	}
 	
 	/**
 	 * Here you can test to select month, day and time on your booking via the page "Anläggningar"
 	 */
-//	@Test
+	@Test
 	public void SearchMonthDayTimeViaVenues() {
-		MatchiSearch matchi = new MatchiSearch();
+		MatchiSearchMonthDayTime matchi = new MatchiSearchMonthDayTime();
 		matchi.openSite("https://beta1.matchi.se/?lang=sv");
 		matchi.logIn();
 		matchi.pageVenues();
 //Here you can enter the Venue/City
-		matchi.searchArea("Hönö");
-		matchi.clickCounty();
+		matchi.searchCityVenue("Hönö");
+		matchi.clickOnCountyViaVenues();
 //Here you can select the county
-		matchi.chooseCounty("Öckerö");
-		matchi.selectCounty();
-		matchi.searchAllSports();
+		matchi.searchCountyViaVenues("Öckerö");
+		matchi.selectCountyViaVenues();
+		matchi.searchAllSportsViaVenues();
 //Here you can enter what sport is to be selected
-		matchi.chooseSport("Badminton");
+		matchi.selectSport("Badminton");
 		matchi.clickSearchButton();
 //Here you can select the displayed result
-		matchi.selectVenue("Hönö");
-		matchi.chooseTimeInVenues();
+		matchi.selectVenueViaVenue("Hönö");
+		matchi.selectTimeInVenues();
 		matchi.quitSelenium();	
 	}
 
