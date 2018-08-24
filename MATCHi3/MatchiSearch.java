@@ -306,21 +306,7 @@ public class MatchiSearch {
 			/**
 			 * simply confirming confirming after adding the times.
 			 */
-			public void confirmMultCourtTime() {
-				WebElement element = webDriver.findElement(By.xpath("//div[@class='col-sm-5 col-xs-12 no-horizontal-padding text-right']//a[@id='block-book']"));
-				element.click();
-				delay(2000);
-				WebElement element2 = webDriver.findElement(By.xpath("//input[@id='btnSubmit']"));
-				element2.click();
-			}
-			/**
-			 * simply clicking the "boka flera" button.
-			 */
-			public void pickMultCourtTime() {
-				WebElement element = webDriver.findElement(By.xpath("//div[@class='col-sm-5 col-xs-12 no-horizontal-padding text-right']//a[@id='block-book-start']"));
-				element.click();
-			}
-			
+		
 			/**
 			 * Goes through the checkout process and fills out credit card info
 			 * @param string -Is the cardnumber
@@ -424,6 +410,21 @@ public class MatchiSearch {
 			// METHOD FOR TESTING BOOKING SEVERAL TIMESLOTS AND/OR COURTS
 			// 
 			
+		public void confirmMultCourtTime() {
+			WebElement element = webDriver.findElement(By.xpath("//div[@class='col-sm-5 col-xs-12 no-horizontal-padding text-right']//a[@id='block-book']"));
+			element.click();
+			delay(2000);
+			WebElement element2 = webDriver.findElement(By.xpath("//input[@id='btnSubmit']"));
+			element2.click();
+		}
+		/**
+		 * simply clicking the "boka flera" button.
+		 */
+		public void pickMultCourtTime() {
+			WebElement element = webDriver.findElement(By.xpath("//div[@class='col-sm-5 col-xs-12 no-horizontal-padding text-right']//a[@id='block-book-start']"));
+			element.click();
+		}
+		
 		
 		public void delay(int milliseconds)
 		{
