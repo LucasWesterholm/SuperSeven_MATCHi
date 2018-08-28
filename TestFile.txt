@@ -1,2 +1,0 @@
-This is simply a test file to be uploaded to GitHub
-EDIT:testing to commit from Eclipse
