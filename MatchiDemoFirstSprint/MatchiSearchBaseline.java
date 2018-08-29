@@ -46,7 +46,19 @@ public class MatchiSearchBaseline {
 		passwordElement.sendKeys("mjukvarutestare");
 		passwordElement.sendKeys(Keys.ENTER);
 	}		
-
+	
+	/**
+	 * Select language
+	 * @param string
+	 */
+	public void selectLanguage(String string)
+	{
+		WebElement language=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[1]/a"));
+		language.click();
+		WebElement lang=webDriver.findElement(By.linkText(string));
+		lang.click();
+	}
+	
 	/**
 	 * Logout from webpage https://beta1.matchi.se
 	 * 
