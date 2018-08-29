@@ -49,7 +49,7 @@ public class MatchiSearchBaseline {
 	
 	/**
 	 * Select language
-	 * @param string
+	 * @param string NORSK, SVENSKA, ENGLISH
 	 */
 	public void selectLanguage(String string)
 	{
