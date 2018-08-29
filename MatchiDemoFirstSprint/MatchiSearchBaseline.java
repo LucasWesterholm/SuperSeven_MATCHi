@@ -21,6 +21,7 @@ public class MatchiSearchBaseline {
 		//System.setProperty("webdriver.chrome.driver", "/Users/lotber/automatisering/chromedriver");
 		webDriver = new ChromeDriver();
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		webDriver.manage().window().maximize()
 	}
 
 	/**
