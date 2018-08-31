@@ -67,7 +67,7 @@ public class MatchiSearchCompleteTestEnglishEDGE {
 	 * Book for one session and unBooking via menu Boka pay by saved CC
 	 * Working in Edge
 	 */
-//	@Test
+	@Test
 	public void BookOneSessionWithSavedCaViaBokaEnglish() {
 		MatchiSearchBaseline msb = new MatchiSearchBaseline();
 		msb.openSite("https://beta1.matchi.se/?lang=sv");
@@ -95,7 +95,7 @@ public class MatchiSearchCompleteTestEnglishEDGE {
 	 * Book and pay for one session with false CVC via menu Boka pay by new CC
 	 * Working in Edge
 	 */
-//	@Test
+	@Test
 	public void BookOneSessionViaBokaFalseCVCEnglish() {
 		MatchiSearchBaseline msb = new MatchiSearchBaseline();
 		msb.openSite("https://beta1.matchi.se/?lang=sv");
@@ -180,7 +180,7 @@ public class MatchiSearchCompleteTestEnglishEDGE {
 		
 	/**
 	 * Search and book, county & courts via menu Venues pay by Swish
-	 * Swish not working, Test works otherwise. in Edge
+	 * Swish not working, Test works otherwise in Edge
 	 */	
 	@Test
 	public void SearchCountyCourtViaVenuesEnglish() {
@@ -233,13 +233,13 @@ public class MatchiSearchCompleteTestEnglishEDGE {
 	
 	/**
 	 * Book via MyPage 
-	 * Working in Edge
+	 * Working in Edge, was not completly finnised in previous sprint so finnised it
 	 */
 	@Test
 	public void BookOneSessionViaMyPageEnglish() {
 		MatchiSearchBaseline msb = new MatchiSearchBaseline();
 		msb.openSite("https://beta1.matchi.se/?lang=sv");
-		msb.logIn();
+		msb.logIn(); 
 		msb.selectLanguage("ENGLISH");
 		MatchiSearchVenue.searchSportViaMyProfile();
 		MatchiSearchVenue.selectSportViaMyProfile("Tennis");
