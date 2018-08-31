@@ -1,20 +1,24 @@
-package norwegian;
+package ffMatchi;
 
-import java.awt.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MatchiSearch {
 	private WebDriver webDriver;
 
 	public MatchiSearch() {
-		System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver.exe");
-		webDriver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "C:/Selenium/chromedriver.exe");
+		//webDriver = new ChromeDriver();
+		
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\sarada mutnuru\\SeleniumServer\\geckodriver-v0.21.0-win64\\geckodriver.exe");
+	  webDriver = new FirefoxDriver();
+
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	public void openSite(String site) {
@@ -46,7 +50,6 @@ public class MatchiSearch {
 				}
      public void chooseSport() {
 		
-	//WebElement dropdown=webDriver.findElement(By.cssSelector("#hero > div > div > div.row > div > form > div > div.form-group.col-sm-3.col-xs-12.no-margin-padding > div > button > span.filter-option.pull-left"));
 		WebElement dropdown=webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[1]/div/div/button/span[1]"));
         dropdown.click();
     			
@@ -77,7 +80,6 @@ public class MatchiSearch {
 		
 		searchbtn.click();
 	}
-	//*[@id="findFacilityForm"]/div/div[1]/div/div/button/span[1]
 	public void chooseInOrOut(String inorout) {
 		WebElement inoutdropdown=webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[1]/div/div/button/span[1]"));
 		inoutdropdown.click();
@@ -110,38 +112,7 @@ public class MatchiSearch {
 }
 	
 			
-	/**	public void bookingViaNewCC(String string, String string2, String string3) {
-			WebElement element = webDriver.findElement(By.xpath("//label[@for='CREDIT_CARD']"));
 			
-			//*[@id="confirmForm"]/div[2]/div[3]/div[2]/div[1]/div/label
-			 * //*[@id="confirmForm"]/div[2]/div[3]/div[2]/div[2]/div/label
-			 
-			element.click();
-			WebElement element2 = webDriver.findElement(By.xpath("//input[@id='btnSubmit']"));
-			element2.click();
-			WebElement element3 = webDriver.findElement(By.xpath("//input[@placeholder='Kortnummer']"));
-			element3.click();
-			element3.sendKeys(string);
-			WebElement element4 = webDriver.findElement(By.xpath("//input[@placeholder='För- och efternamn']"));
-			element4.click();
-			element4.sendKeys(string2);
-			WebElement element5 = webDriver.findElement(By.xpath("//input[@placeholder='cvc / cid']"));
-			element5.click();
-			element5.sendKeys(string3);
-			WebElement element6 = webDriver.findElement(By.xpath("//option[@value='10']"));
-			element6.click();
-			WebElement element7 = webDriver.findElement(By.xpath("//option[@value='2020']"));
-			element7.click();
-			WebElement element8 = webDriver.findElement(By.xpath("//input[@value='Slutför betalning']"));
-			element8.click();
-
-			
-		}**/
-		
-	
-	
-	//*[@id="confirmForm"]/div[2]/div[3]/div[2]/div[2]/div/label
-	
 	public void clickBookButton() {
 		WebElement bookbutton=webDriver.findElement(By.id("btnSubmit"));
 		bookbutton.click();
@@ -149,9 +120,10 @@ public class MatchiSearch {
 	public void enterCCdetails(String cardnumber, String nameofcardholder, String cvcnumber) {
 		
 		WebElement ccnumber=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[1]/div/div/div[2]/div[1]/div/input"));
+		ccnumber.clear();
 		ccnumber.click();
-		ccnumber.sendKeys(cardnumber);
-		
+		JavascriptExecutor js= (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[1].value = arguments[0]; ", cardnumber, ccnumber); 
 		
 		
 		WebElement name=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[1]/div/div/div[2]/div[2]/input"));
@@ -173,11 +145,76 @@ public class MatchiSearch {
 		WebElement dopayment=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[2]/input"));
 		dopayment.click();
 	}
+	
+/*public void enterCCdetails(String cardnumber) {
+	
+	
+		
+		WebElement ccnumber=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[1]/div/div/div[2]/div[1]/div/input"));
+		ccnumber.clear();
+		ccnumber.click();
+		
+		JavascriptExecutor js= (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[1].value = arguments[0]; ", cardnumber, ccnumber); 
+		
+		//ccnumber.sendKeys(cardnumber);
+		//ccnumber.sendKeys(String.valueOf(cardnumber));
+		//for(int i=0;i<cardnumber.length();i++){
+          //  ccnumber.sendKeys(cardnumber.substring(i));
+		
+        }
+
+	
+public void enterCCname(String nameofcardholder){
+	
+	WebElement name=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[1]/div/div/div[2]/div[2]/input"));
+	name.click();
+	name.sendKeys(nameofcardholder);
+	
+}
+public void enterCCcvc(String cvcnumber) {
+	
+	WebElement cvcno=webDriver.findElement(By.xpath("//*[@id=\"adyen-encrypted-form\"]/div[1]/div/div/div[2]/div[5]/div/input"));
+	cvcno.click();
+	cvcno.sendKeys(cvcnumber);
+	}
+	*/
+	
+	
 	public void closeWindow() {
 		WebElement closewindow=webDriver.findElement(By.xpath("//*[@id=\"userBookingModal\"]/div[1]/div/div[3]/a"));
 		closewindow.click();
 	}
-	//*[@id="userBookingModal"]/div[1]/div/div[3]/a	
+	
+	public void logout() {
+		WebElement mjuk=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[4]/a"));
+		mjuk.click();
+		WebElement logout=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[4]/ul/li[8]/a"));
+		logout.click();
+		
+}
+	public void cancelBooking() {
+		WebElement cancelbooking=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[3]/a/i"));
+		cancelbooking.click();
+		WebElement clickoncancel=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[3]/ul/li[1]/a/div/div[2]/h5"));
+		clickoncancel.click();
+		delay(1000);
+		WebElement avbook=webDriver.findElement(By.xpath("//*[@id=\"userBookingModal\"]/div[2]/div/div[3]/a[2]"));
+		avbook.click();
+		//*[@id="userBookingModal"]/div[2]/div/div[3]/a[2]
+		WebElement closewindow=webDriver.findElement(By.xpath("//*[@id=\"cancelCloseBtn\"]"));
+		closewindow.click();
+	}
+	public void multipleBookings() {
+		WebElement multibooking=webDriver.findElement(By.id("block-book-start"));
+		
+		multibooking.click();
+		chooseCourtTime("2", "6");
+		delay(1000);
+		chooseCourtTime("1","8");
+		
+		
+	}
 	public void quitSelenium() {
 		webDriver.close();
 	}

@@ -1,8 +1,19 @@
-package norwegian;
+package ffMatchi;
 
 import org.junit.jupiter.api.Test;
 
 public class MatchiSearchTest {
+	
+	/*
+	 *The test is booking via login path
+	 *choose county
+	 *choose venue
+	 *pay by new credit card
+	 *Cancel booking
+	 *logout
+	 * 
+	 * */
+	 
 
 	@Test
 	void Matchitestwithlogin() {
@@ -17,18 +28,29 @@ public class MatchiSearchTest {
 	   matchisearch.selectedDate("2018-08-30");
 	   matchisearch.selectedCity("Göteborg");
        matchisearch.clickonSmash();
-       matchisearch.delay(1000);
+       matchisearch.delay(2000);
        matchisearch.chooseInOrOut("Innendørs");
-      
+       matchisearch.delay(1000);
        matchisearch.selectArena("Hönö Tennissällskap");
-	   matchisearch.chooseCourtTime("2", "6");
+	   matchisearch.chooseCourtTime("2", "15");
 	   matchisearch.delay(1000);
-		matchisearch.bookingViaNewCC();
-       matchisearch.clickBookButton();
-        matchisearch.enterCCdetails("2223000048410010", "MjukVarutestare", "737");
 
+	   matchisearch.bookingViaNewCC();
+       matchisearch.clickBookButton();
+       matchisearch.delay(3000);
+       matchisearch.enterCCdetails("2223000048410010","Mjukvarutestare","737");
+       matchisearch.delay(3000);
+
+      // matchisearch.enterCCname("Mjukvarutestare");
+      // matchisearch.enterCCcvc("737");
+       matchisearch.delay(1000);
        matchisearch.closeWindow();
-       matchisearch.quitSelenium();
+	   matchisearch.delay(1000);
+       matchisearch.cancelBooking();
+       matchisearch.logout();
+      // matchisearch.multipleBookings();
+      // matchisearch.bookingViaBookOption();
+      matchisearch.quitSelenium();
 }
 	/**@Test
 	void Matchitest**/
