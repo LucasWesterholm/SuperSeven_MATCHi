@@ -50,11 +50,11 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-08-29");
+		MatchiBookAndPay.chooseDate("2018-09-09");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
-		MatchiBookAndPay.chooseCourtTime("2", "3");
+		MatchiBookAndPay.chooseCourtTime("2", "11");
 		msb.delay(2000);
 		MatchiBookAndPay.payCourtByCard("2223000048410010", "MjukVarutestare", "737");
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
@@ -77,11 +77,11 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-08-29");
+		MatchiBookAndPay.chooseDate("2018-09-09");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
-		MatchiBookAndPay.chooseCourtTime("2", "3");
+		MatchiBookAndPay.chooseCourtTime("2", "11");
 		msb.delay(2000);
 		MatchiBookAndPay.payWithSavedCard();
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
@@ -104,7 +104,7 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-08-29");
+		MatchiBookAndPay.chooseDate("2018-09-09");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
@@ -130,7 +130,7 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-08-29");
+		MatchiBookAndPay.chooseDate("2018-09-09");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
@@ -163,7 +163,7 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
 		MatchiSearchVenue.selectSportViaVenues("Badminton");
 		msb.delay(1000);
-		MatchiBookAndPay.chooseCourtTime("2", "7");
+		MatchiBookAndPay.chooseCourtTime("2", "10");
 		msb.delay(2000);
 		MatchiBookAndPay.payCourtByCard("2223000048410010", "MjukVarutestare", "737");
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
@@ -237,7 +237,7 @@ public class MatchiSearchCompleteTest {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-08-29");
+		MatchiBookAndPay.chooseDate("2018-09-09");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		MatchiSearchMonthDayTime.selectTime();
