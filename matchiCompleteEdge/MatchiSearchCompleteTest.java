@@ -216,7 +216,7 @@ public class MatchiSearchCompleteTest {
 	/**
 	 * Search and book, county & courts via menu Venues pay by Swish
 	 */	
-	@Test
+	/*@Test
 	public void SearchCountyCourtViaVenues() {
 		MatchiSearchBaseline msb = new MatchiSearchBaseline();
 		msb.openSite("https://beta1.matchi.se/");
