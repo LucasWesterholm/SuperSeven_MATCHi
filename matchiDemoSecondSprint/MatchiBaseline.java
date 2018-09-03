@@ -30,6 +30,7 @@ public static WebDriver webDriver;
 		webDriver = new ChromeDriver();
 	//	webDriver = new FirefoxDriver();
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		webDriver.manage().window().maximize();
 	}
 		
 	/**
