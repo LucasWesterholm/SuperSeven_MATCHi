@@ -21,11 +21,11 @@ public static WebDriver webDriver;
 	
 	public MatchiBaseline() {
 	//	System.setProperty("webdriver.gecko.driver", "/Users/lotber/automatisering/geckodriver");
-		System.setProperty("webdriver.chrome.driver", "/Users/lotber/automatisering/chromedriver");
+	//	System.setProperty("webdriver.chrome.driver", "/Users/lotber/automatisering/chromedriver");
 		
-			/* for windows
-			//	System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
-			//	System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");*/
+	// for Windows
+		//System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
 		
 		webDriver = new ChromeDriver();
 	//	webDriver = new FirefoxDriver();
