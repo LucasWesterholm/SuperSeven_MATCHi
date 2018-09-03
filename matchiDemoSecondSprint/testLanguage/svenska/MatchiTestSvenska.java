@@ -220,39 +220,6 @@ public class MatchiTestSvenska {
 	//	MatchiBookAndPay.unBook();
 		msb.quitSelenium();
 	}
-
-	/**
-	 * Search and book sport & courts via Venues pay by saved CC
-	 * STRUNTA I DETTA TESTFALL. Funkar bara ibland.
-	 */	
-//	@Test
-	public void SearchSportCourtViaVenuesSv() {
-		MatchiBaseline msb = new MatchiBaseline();
-		msb.openSite("https://beta1.matchi.se/");
-		msb.logIn();
-		msb.delay(500);
-		msb.selectLanguage("SVENSKA");
-		MatchiSearchVenue.pageVenues();
-		MatchiSearchVenue.searchAllSportsViaVenues();
-		MatchiSearchVenue.selectSport("Badminton");
-		msb.clickSearchButton();
-		MatchiSearchVenue.clickOnCountyViaVenues();
-		msb.delay(500);
-		MatchiSearchVenue.selectVenueViaVenue("Lilla Edet");
-		msb.delay(500);
-		msb.clickSearchButton();
-		msb.delay(500);
-		MatchiSearchVenue.chooseVenue("Lilla Edets Tennisklubb");
-		msb.delay(500);
-		MatchiSearchVenue.selectSportViaVenues("Badminton");
-		msb.delay(500);
-		MatchiBookAndPay.chooseCourtTime("2", "11");
-		msb.delay(2000);
-		MatchiBookAndPay.payWithSavedCard();
-		MatchiBookAndPay.assertBooking("Tack för din bokning!");
-		MatchiBookAndPay.unBook();
-		msb.quitSelenium();
-	}
 		
 	/**
 	 * Book via MyPage 
