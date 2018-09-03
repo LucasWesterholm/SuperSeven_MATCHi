@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.edge.EdgeDriver;
 
 public class MatchiBaseline{
 	
@@ -26,9 +27,11 @@ public static WebDriver webDriver;
 	// for Windows
 		//System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
 		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
+		//System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
 		
 		webDriver = new ChromeDriver();
 	//	webDriver = new FirefoxDriver();
+	//	webDriver = new EdgeDriver();
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 	}
