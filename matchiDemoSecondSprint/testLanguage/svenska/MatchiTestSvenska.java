@@ -16,7 +16,7 @@ public class MatchiTestSvenska {
 	/**
 	 * Login test with correct credentials and check if logged in
 	 */
-//	@Test
+	@Test
 	public void LogInTestSv() {
 		MatchiBaseline msb = new MatchiBaseline();
 		msb.openSite("https://beta1.matchi.se/");
