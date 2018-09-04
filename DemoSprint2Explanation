@@ -1,0 +1,9 @@
+The folder DemoSPrint 2 is almost done, still problems with Edge though.....
+
+Negativ login in Edge has to have a space at the end of 
+"assertTrue(MatchiSearchLogIn.logInNegativeCheck("Incorrect username or password_"));" to work, but FF and Chrome can't have that space.
+
+Same with the method "MatchiSearchVenue.selectInOutCourt("Indoors_");"
+
+
+
