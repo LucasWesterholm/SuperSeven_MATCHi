@@ -1,0 +1,1 @@
+When calling the constructor there is a need of adding a paramater of which browser to be used for the test case.
