@@ -20,21 +20,26 @@ public class MatchiBaseline{
 	
 public static WebDriver webDriver;
 	
-	public MatchiBaseline() {
-	//	System.setProperty("webdriver.gecko.driver", "/Users/lotber/automatisering/geckodriver");
-	//	System.setProperty("webdriver.chrome.driver", "/Users/lotber/automatisering/chromedriver");
-		
-	// for Windows
-		//System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
-		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
-		//System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
-		
+	public MatchiBaseline(String lang) {
+	
+		if (lang.equals("Chrome")){
+		System.setProperty("webdriver.chrome.driver", "bin/geckodriver.exe");
 		webDriver = new ChromeDriver();
-	//	webDriver = new FirefoxDriver();
-	//	webDriver = new EdgeDriver();
+		}
+		else if (lang.equals("Firefox")){
+		System.setProperty("webdriver.gecko.driver", "bin/chromedriver.exe");
+		webDriver = new FirefoxDriver();
+		}
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 	}
+	
+	/**
+	* Need to add an else for taking care of Edge
+	* System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
+	*/
+
+		
 		
 	/**
 	 * Opens the site Url
