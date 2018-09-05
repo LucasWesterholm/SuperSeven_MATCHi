@@ -113,6 +113,26 @@ public class MatchiBookAndPay extends MatchiBaseline{
 		String text = element.getText();	
 		return expected.contains(text);
 	}
+	/**
+	 * check confirmation dialog of desired day are correct
+	 * @param expectedDay
+	 * @return
+	 */
+	public static boolean assertBookingDay(String expectedDay) {
+		WebElement element = webDriver.findElement(By.id("userBookingModal"));
+		String text = element.getText();
+		return expectedDay.contains(text);
+	}
+	/**
+	 * check confirmation dialog of desired time are correct
+	 * @param expectedTime
+	 * @return
+	 */
+	public static boolean assertBookingTime(String expectedTime) {
+		WebElement element = webDriver.findElement(By.id("userBookingModal"));
+		String text = element.getText();
+		return expectedTime.contains(text);
+	}
 	
 	/**
 	 * unbooks the time to reset test state
