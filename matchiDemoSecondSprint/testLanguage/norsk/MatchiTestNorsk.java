@@ -89,7 +89,7 @@ public class MatchiTestNorsk {
 		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.chooseCourtTime("2", "15");
 		MatchiBookAndPay.assertBookingDay("10/9");
-		MatchiBookAndPay.assertBookingTime("16.00-17.00");
+		MatchiBookAndPay.assertBookingTime("21.00-22.00");
 		MatchiBookAndPay.payWithSavedCard();
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
 		MatchiBookAndPay.unBook();
