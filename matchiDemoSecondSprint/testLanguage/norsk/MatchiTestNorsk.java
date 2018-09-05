@@ -11,14 +11,14 @@ import matchi.functions.MatchiSearchLogIn;
 import matchi.functions.MatchiSearchVenue;
 
 public class MatchiTestNorsk {
-
+	String browser = "Firefox";
 	/**
 	 * Login test with correct credentials and check if logged in
 	 * 
 	 */
 	@Test
 	public void LogInTestNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -34,7 +34,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void LogInNegativeTestNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.selectLanguage("NORSK");
 		MatchiSearchLogIn.logInNegative();
@@ -49,7 +49,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void BookOneSessionViaBokaNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -80,7 +80,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void BookOneSessionWithSavedCaViaBokaNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -97,8 +97,10 @@ public class MatchiTestNorsk {
 		msb.delay(2000);
 		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
 		msb.delay(2000);
-		MatchiBookAndPay.chooseCourtTime("2", "15");
+		MatchiBookAndPay.chooseCourtTime("2", "10");
 		msb.delay(1000);
+		MatchiBookAndPay.assertBookingDay("10/9");
+		MatchiBookAndPay.assertBookingTime("16.00-17.00");
 		MatchiBookAndPay.payWithSavedCard();
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
 		MatchiBookAndPay.unBook();
@@ -112,7 +114,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void BookOneSessionViaBokaFalseCVCNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -143,7 +145,7 @@ public class MatchiTestNorsk {
 	 */ 
 	@Test
 	public void BookMultipleSessionsViaBokaNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -169,6 +171,9 @@ public class MatchiTestNorsk {
 		msb.delay(2000);
 		MatchiBookAndPay.confirmMultCourtTime();
 		msb.delay(2000);
+		MatchiBookAndPay.assertBookingDay("10/9");
+		MatchiBookAndPay.assertBookingTime("16.00-17.00");
+		msb.delay(500);
 		MatchiBookAndPay.assertBooking("Takk skal du ha for bookingen din!");
 		MatchiBookAndPay.unBook();
 		msb.delay(1000);
@@ -184,7 +189,7 @@ public class MatchiTestNorsk {
 	 * 
 	 */	
 	public void BookOneSessionViaVenuesNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -210,7 +215,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void SearchCountyCourtViaVenuesNo() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -236,7 +241,7 @@ public class MatchiTestNorsk {
 	 */
 	@Test
 	public void BookOneSessionViaMyPageSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
