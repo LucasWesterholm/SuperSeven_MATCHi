@@ -21,17 +21,17 @@ public class MatchiBaseline{
 	
 public static WebDriver webDriver;
 	
-	public MatchiBaseline(String lang) {
+	public MatchiBaseline(String browser) {
 		
-		if (lang.equals("Chrome")){
+		if (browser.equals("Chrome")){
 		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
 		webDriver = new ChromeDriver();
 		}
-		else if (lang.equals("Firefox")){
+		else if (browser.equals("Firefox")){
 		System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
 		webDriver = new FirefoxDriver();
 		}
-		else if (lang.equals("Edge")){
+		else if (browser.equals("Edge")){
 		System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
 		webDriver = new EdgeDriver(); 
 		}
