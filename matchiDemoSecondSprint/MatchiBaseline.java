@@ -33,7 +33,8 @@ public static WebDriver webDriver;
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 	}
-	
+	public MatchiBaseline() {};
+
 	/**
 	* Need to add an else for taking care of Edge
 	* System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
