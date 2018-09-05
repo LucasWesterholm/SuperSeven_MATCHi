@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import matchi.MatchiBaseline;
+import matchiDemoSecondSprint.MatchiBaseline;
 
 
 
@@ -35,6 +35,7 @@ public class MatchiSearchLogIn extends MatchiBaseline{
 	 * @return
 	 */
 	public static boolean logInNegativeCheck(String negativePassword) {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.className("notification-message"));
 		String text = element.getText();
 		return text.equals(negativePassword);
