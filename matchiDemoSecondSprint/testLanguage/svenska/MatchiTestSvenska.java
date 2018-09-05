@@ -166,7 +166,7 @@ public class MatchiTestSvenska {
 		MatchiBookAndPay.confirmMultCourtTime();
 		msb.delay(2000);
 		MatchiBookAndPay.assertBookingDay("10/9");
-		MatchiBookAndPay.assertBookingTime("16.00-17.00");
+		MatchiBookAndPay.assertBookingTime("17.00-18.00");
 		msb.delay(500);
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
