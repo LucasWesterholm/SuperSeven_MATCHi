@@ -98,6 +98,8 @@ public class MatchiTestSvenska {
 		msb.delay(2000);
 		MatchiBookAndPay.chooseCourtTime("2", "15");
 		msb.delay(1000);
+		MatchiBookAndPay.assertBookingDay("10/9");
+		MatchiBookAndPay.assertBookingTime("16.00-17.00");
 		MatchiBookAndPay.payWithSavedCard();
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
@@ -163,6 +165,9 @@ public class MatchiTestSvenska {
 		msb.delay(2000);
 		MatchiBookAndPay.confirmMultCourtTime();
 		msb.delay(2000);
+		MatchiBookAndPay.assertBookingDay("10/9");
+		MatchiBookAndPay.assertBookingTime("16.00-17.00");
+		msb.delay(500);
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
 		msb.delay(1000);
