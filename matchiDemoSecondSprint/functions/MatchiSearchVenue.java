@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import matchi.MatchiBaseline;
+import matchiDemoSecondSprint.MatchiBaseline;
 
 
 	
@@ -24,7 +24,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
 	}
 	
 /**
- * Go to the page "Anläggningar"	
+ * Go to the page "AnlÃ¤ggningar"	
  */
 	public static void pageVenues() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\'navbar-collapse\']/ul[1]/li[2]/a"));
@@ -50,7 +50,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
 	
 	
 /**
- * Search for all sports via "Anläggningar"	
+ * Search for all sports via "AnlÃ¤ggningar"	
  */
 	public static void searchAllSportsViaVenues() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[3]/div/button/span[1]")); 
@@ -61,6 +61,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
 	 * Search for sports via "Min profil"	
 	 */		
 		public static void searchSportViaMyProfile() {
+			delay(2000);
 			WebElement element = webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[1]/div/div/button"));
 			element.click();
 		}
@@ -74,6 +75,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
 		element.click();	
 	}
 	public static void selectSportViaMyProfile(String sport) {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.partialLinkText(sport));
 		element.click();	
 	}
@@ -83,6 +85,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
 	 * @param string
 	 */
 		public static void selectSportViaVenues(String sport) {
+			delay(2000);
 			WebElement element = webDriver.findElement(By.partialLinkText(sport));
 			element.click();	
 		}
@@ -116,6 +119,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
  * @param area - this gets the parameter that is entered in the test cases
  */
 	public static void searchCityVenue(String area) {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"q\"]"));
 		element.click();
 		element.sendKeys(area);
@@ -127,8 +131,10 @@ public class MatchiSearchVenue extends MatchiBaseline{
 	 * Choose desired venue.
 	 * @param string  - this gets the parameter that is entered in the test cases
 	 */
-	public static void chooseVenue(String string) {
-		WebElement element = webDriver.findElement (By.partialLinkText(string));
+	public static void chooseVenue() {
+	//	WebElement element = webDriver.findElement (By.partialLinkText(string));
+		delay(2000);
+		WebElement element = webDriver.findElement(By.xpath("//a[@class='text-black weight400']"));
 		element.click();
 		}
 	
@@ -190,6 +196,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
  * Search in/out court-selection	
  */
 	public static void searchInOutCourt() {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[1]/div/div/button"));
 		element.click();
 	}
@@ -200,6 +207,7 @@ public class MatchiSearchVenue extends MatchiBaseline{
  */
 	public static void selectInOutCourt(String court) {
 	//	WebElement element = webDriver.findElement(By.xpath("//*[@id=\"findFacilityForm\"]/div/div[1]/div/div/div/ul/li[2]/a/span[1]")); ---- ORGINAL EJ FUNGERANDE
+		delay(2000);
 		WebElement element = webDriver.findElement(By.linkText(court));
 		element.click();
 	}
