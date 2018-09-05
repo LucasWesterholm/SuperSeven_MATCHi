@@ -4,25 +4,23 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import matchi.MatchiBaseline;
-import matchi.functions.MatchiBookAndPay;
-import matchi.functions.MatchiPayBySwish;
-import matchi.functions.MatchiSearchLogIn;
-import matchi.functions.MatchiSearchVenue;
+import matchiDemoSecondSprint.MatchiBaseline;
+import matchiDemoSecondSprint.functions.MatchiBookAndPay;
+import matchiDemoSecondSprint.functions.MatchiPayBySwish;
+import matchiDemoSecondSprint.functions.MatchiSearchLogIn;
+import matchiDemoSecondSprint.functions.MatchiSearchVenue;
 
 
 public class MatchiTestSvenska {
 	String browser = "Chrome";
-
 	/**
 	 * Login test with correct credentials and check if logged in
 	 */
 	@Test
 	public void LogInTestSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchLogIn.logInPositiveCheck("Mjuk Varutestare");
 		msb.quitSelenium();
@@ -38,7 +36,6 @@ public class MatchiTestSvenska {
 		msb.openSite("https://beta1.matchi.se/");
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchLogIn.logInNegative();
-		msb.delay(1000);
 		assertTrue(MatchiSearchLogIn.logInNegativeCheck("Felaktigt användarnamn eller lösenord"));
 		msb.quitSelenium();
 	}
@@ -52,7 +49,6 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageBook();
 		MatchiSearchVenue.searchInOutCourt();
@@ -62,11 +58,8 @@ public class MatchiTestSvenska {
 		MatchiBookAndPay.chooseDate("2018-09-10");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
-		msb.delay(2000);
-		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
-	//	msb.delay(2000);
+		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.chooseCourtTime("2", "13");
-		msb.delay(1000);
 		MatchiBookAndPay.enterCCdetails("2223000048410010", "MjukVarutestare", "737");
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
@@ -82,22 +75,17 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
-	//	msb.selectLanguage("SVENSKA");
+		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageBook();
 		MatchiSearchVenue.searchInOutCourt();
-		msb.delay(1000);
 		MatchiSearchVenue.selectInOutCourt("Utomhus");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
 		MatchiBookAndPay.chooseDate("2018-09-10");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
-		msb.delay(2000);
-		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
-		msb.delay(2000);
+		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.chooseCourtTime("2", "15");
-		msb.delay(1000);
 		MatchiBookAndPay.assertBookingDay("10/9");
 		MatchiBookAndPay.assertBookingTime("16.00-17.00");
 		MatchiBookAndPay.payWithSavedCard();
@@ -114,7 +102,6 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageBook();
 		MatchiSearchVenue.searchInOutCourt();
@@ -124,10 +111,8 @@ public class MatchiTestSvenska {
 		MatchiBookAndPay.chooseDate("2018-09-10");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
-		msb.delay(2000);
-		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
+		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.chooseCourtTime("2", "15");
-		msb.delay(1000);
 		MatchiBookAndPay.enterCCdetails("2223000048410010", "MjukVarutestare", "373");
 		MatchiBookAndPay.assertBooking("Ett problem uppstod!");
 		msb.quitSelenium();
@@ -142,7 +127,6 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageBook();
 		MatchiSearchVenue.searchInOutCourt();
@@ -152,27 +136,17 @@ public class MatchiTestSvenska {
 		MatchiBookAndPay.chooseDate("2018-09-10");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
-		msb.delay(1000);
-		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
-		msb.delay(1000);
+		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.pickMultCourtTime();
-		msb.delay(1000);
 		MatchiBookAndPay.chooseCourtTime("2", "11");
-		msb.delay(1000);
 		MatchiBookAndPay.chooseCourtTime("2", "12");
-		msb.delay(2000);
 		MatchiBookAndPay.chooseCourtTime("3", "13");
-		msb.delay(2000);
 		MatchiBookAndPay.confirmMultCourtTime();
-		msb.delay(2000);
 		MatchiBookAndPay.assertBookingDay("10/9");
 		MatchiBookAndPay.assertBookingTime("17.00-18.00");
-		msb.delay(500);
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
-		msb.delay(1000);
 		MatchiBookAndPay.unBookAgain();
-		msb.delay(1000);
 		MatchiBookAndPay.unBookAgain();
 		msb.quitSelenium();
 	}
@@ -185,16 +159,13 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageVenues();
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSearchButton();
-		MatchiSearchVenue.chooseVenue("Hönö Tennissällskap");
+		MatchiSearchVenue.chooseVenue();
 		MatchiSearchVenue.selectSportViaVenues("Badminton");
-		msb.delay(1000);
 		MatchiBookAndPay.chooseCourtTime("2", "12");
-		msb.delay(1000);
 		MatchiBookAndPay.enterCCdetails("2223000048410010", "MjukVarutestare", "737");
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
@@ -205,20 +176,17 @@ public class MatchiTestSvenska {
 	 * Search and book, county & courts via menu Venues pay by Swish
 	 * 
 	 */
-	@Test
+//	@Test
 	public void SearchCountyCourtViaVenuesSv() {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.pageVenues();
 		MatchiSearchVenue.searchCityVenue("Stenungsund");
-		msb.delay(2000);
 		msb.clickSearchButton();
-		MatchiSearchVenue.chooseVenue("Stenungsunds TK");
+		MatchiSearchVenue.chooseVenue();
 		MatchiSearchVenue.selectSportViaVenues("Utomhus");
-		msb.delay(2000);
 		MatchiBookAndPay.chooseCourtTime("2", "11");
 		msb.delay(500);
 		MatchiPayBySwish.payBySwish();
@@ -235,7 +203,6 @@ public class MatchiTestSvenska {
 		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
-		msb.delay(500);
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchVenue.searchSportViaMyProfile();
 		MatchiSearchVenue.selectSportViaMyProfile("Tennis");
@@ -243,10 +210,8 @@ public class MatchiTestSvenska {
 		MatchiSearchVenue.searchCityVenue("Stenungsund");
 		msb.clickSmashButtonOnMyProfile();
 		msb.clickSmashButton();
-		msb.delay(2000);
-		MatchiSearchVenue.chooseVenue("Stenungsunds TK");
+		MatchiSearchVenue.chooseVenue();
 		MatchiBookAndPay.chooseCourtTime("2", "12");
-		msb.delay(2000);
 		MatchiBookAndPay.payWithSavedCard();
 		MatchiBookAndPay.assertBooking("Tack för din bokning!");
 		MatchiBookAndPay.unBook();
