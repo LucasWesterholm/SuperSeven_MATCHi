@@ -12,36 +12,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MatchiBaseline{
 	
 public static WebDriver webDriver;
 	
 	public MatchiBaseline(String lang) {
-	
+		
 		if (lang.equals("Chrome")){
-		System.setProperty("webdriver.chrome.driver", "bin/geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
 		webDriver = new ChromeDriver();
 		}
 		else if (lang.equals("Firefox")){
-		System.setProperty("webdriver.gecko.driver", "bin/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "bin/geckodriver.exe");
 		webDriver = new FirefoxDriver();
+		}
+		else if (lang.equals("Edge")){
+		System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
+		webDriver = new EdgeDriver(); 
 		}
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		webDriver.manage().window().maximize();
 	}
-	public MatchiBaseline() {};
-
-	/**
-	* Need to add an else for taking care of Edge
-	* System.setProperty("webdriver.edge.driver", "bin/MicrosoftWebDriver.exe");
-	*/
-
-		
-		
+		public MatchiBaseline() {};
+	
+				
 	/**
 	 * Opens the site Url
 	 * @param siteUrl
@@ -56,6 +55,7 @@ public static WebDriver webDriver;
 	 * @param string
 	 */
 	public void selectLanguage(String string) {
+		delay(2000);
 		WebElement language=webDriver.findElement(By.xpath("//*[@id=\"navbar-collapse\"]/ul[2]/li[1]/a"));
 		language.click();
 		WebElement lang=webDriver.findElement(By.linkText(string));
@@ -94,6 +94,7 @@ public static WebDriver webDriver;
 	 * Click on Search-button
 	 */
 	public  void clickSearchButton() {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"submit\"]"));
 		element.click();
 	}
