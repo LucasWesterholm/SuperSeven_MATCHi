@@ -12,6 +12,7 @@ import matchi.functions.MatchiSearchVenue;
 
 
 public class MatchiTestSvenska {
+	String browser = "Chrome";
 
 	/**
 	 * Login test with correct credentials and check if logged in
@@ -33,7 +34,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void LogInNegativeTestSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.selectLanguage("SVENSKA");
 		MatchiSearchLogIn.logInNegative();
@@ -48,7 +49,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void BookOneSessionViaBokaSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -78,7 +79,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void BookOneSessionWithSavedCaViaBokaSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -108,7 +109,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void BookOneSessionViaBokaFalseCVCSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -136,7 +137,7 @@ public class MatchiTestSvenska {
 	 */ 
 	@Test
 	public void BookMultipleSessionsViaBokaSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -176,7 +177,7 @@ public class MatchiTestSvenska {
 	 */	
 	@Test
 	public void BookOneSessionViaVenuesSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -201,7 +202,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void SearchCountyCourtViaVenuesSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -226,7 +227,7 @@ public class MatchiTestSvenska {
 	 */
 	@Test
 	public void BookOneSessionViaMyPageSv() {
-		MatchiBaseline msb = new MatchiBaseline();
+		MatchiBaseline msb = new MatchiBaseline(browser);
 		msb.openSite("https://beta1.matchi.se/");
 		msb.logIn();
 		msb.delay(500);
@@ -253,5 +254,5 @@ public class MatchiTestSvenska {
 	public void testOrder2() {BookOneSessionViaBokaSv();BookOneSessionWithSavedCaViaBokaSv();
 	BookOneSessionViaBokaFalseCVCSv();BookMultipleSessionsViaBokaSv();}
 //	@Test
-	public void testOrder3() {BookOneSessionViaVenuesSv();SearchCountyCourtViaVenuesSv();SearchSportCourtViaVenuesSv();BookOneSessionViaMyPageSv();	}
+	public void testOrder3() {BookOneSessionViaVenuesSv();SearchCountyCourtViaVenuesSv();BookOneSessionViaMyPageSv();	}
 }
