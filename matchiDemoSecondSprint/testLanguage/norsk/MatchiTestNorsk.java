@@ -59,7 +59,7 @@ public class MatchiTestNorsk {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-09-10");
+		MatchiBookAndPay.chooseDate("10/9/2018");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		msb.delay(2000);
@@ -91,7 +91,7 @@ public class MatchiTestNorsk {
 		MatchiSearchVenue.selectInOutCourt("Utendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-09-10");
+		MatchiBookAndPay.chooseDate("10/9/2018");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		msb.delay(2000);
@@ -124,7 +124,7 @@ public class MatchiTestNorsk {
 		MatchiSearchVenue.selectInOutCourt("Innendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-09-10");
+		MatchiBookAndPay.chooseDate("10/9/2018");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		msb.delay(2000);
@@ -155,7 +155,7 @@ public class MatchiTestNorsk {
 		MatchiSearchVenue.selectInOutCourt("Utendørs");
 		MatchiSearchVenue.searchSportViaBook();
 		MatchiSearchVenue.selectSport("Tennis");
-		MatchiBookAndPay.chooseDate("2018-09-10");
+		MatchiBookAndPay.chooseDate("10/9/2018");
 		MatchiSearchVenue.searchCityVenue("Hönö Tennissällskap");
 		msb.clickSmashButton();
 		msb.delay(1000);
@@ -248,7 +248,7 @@ public class MatchiTestNorsk {
 		msb.selectLanguage("NORSK");
 		MatchiSearchVenue.searchSportViaMyProfile();
 		MatchiSearchVenue.selectSportViaMyProfile("Tennis");
-		MatchiSearchVenue.selectDayViaMyPage("2018-09-12");
+		MatchiSearchVenue.selectDayViaMyPage("12/9/2018");
 		MatchiSearchVenue.searchCityVenue("Stenungsund");
 		msb.clickSmashButtonOnMyProfile();
 		msb.clickSmashButton();
