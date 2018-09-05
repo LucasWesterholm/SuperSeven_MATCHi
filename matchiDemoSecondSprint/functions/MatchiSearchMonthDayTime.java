@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import matchi.MatchiBaseline;
+import matchiDemoSecondSprint.MatchiBaseline;
 
 
 
@@ -16,7 +16,7 @@ public class MatchiSearchMonthDayTime extends MatchiBaseline{
 	//
 	
 	/**
-	 * Select the desired time on "Anläggningar" (time selected is 18:00)	
+	 * Select the desired time on "AnlÃ¤ggningar"	
 	 */
 	public static void selectTimeInVenues() {
 		JavascriptExecutor js = (JavascriptExecutor) webDriver;
@@ -26,7 +26,7 @@ public class MatchiSearchMonthDayTime extends MatchiBaseline{
 	}
 
 	/**
-	 * Time is selected	(time selected is 18:00)
+	 * Time is selected
 	 */
 	public static void selectTime() {
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"slots_20\"]/ul/li[12]/button"));
