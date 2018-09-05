@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
-import matchi.MatchiBaseline;
+import matchiDemoSecondSprint.MatchiBaseline;
 
 
 	
@@ -64,6 +64,7 @@ public class MatchiBookAndPay extends MatchiBaseline{
 	 */
 	
 	public static void enterCCdetails(String cardnumber, String nameofcardholder, String cvcnumber) {
+		delay(2000);
 		WebElement element = webDriver.findElement(By.xpath("//label[@for='CREDIT_CARD']"));
 		element.click();
 		WebElement element2 = webDriver.findElement(By.xpath("//input[@id='btnSubmit']"));
@@ -97,7 +98,9 @@ public class MatchiBookAndPay extends MatchiBaseline{
 	
   
 	public static void payWithSavedCard() {
+		delay(1000);
 		WebElement element = webDriver.findElement(By.xpath("//*[@id=\"btnSubmit\"]"));
+		delay(1000);
 		element.click();
 	}
 	
@@ -105,7 +108,7 @@ public class MatchiBookAndPay extends MatchiBaseline{
 	
 	/**
 	 * checks the page for info, atm it checks the top sentence.
-	 * @param expected -expected text when method run like "Tack för din bokning!"
+	 * @param expected -expected text when method run like "Tack fÃ¶r din bokning!"
 	 * @return -returns true if expected matches what the page says.
 	 */
 	public static boolean assertBooking(String expected) {
@@ -113,6 +116,7 @@ public class MatchiBookAndPay extends MatchiBaseline{
 		String text = element.getText();	
 		return expected.contains(text);
 	}
+	
 	/**
 	 * check confirmation dialog of desired day are correct
 	 * @param expectedDay
